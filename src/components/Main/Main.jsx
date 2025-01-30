@@ -5,6 +5,7 @@ import Select from "../Select/Select";
 import Input from "../Input/Input";
 import { pushEmployee } from "../../Utility/Utility";
 import Modal from "modalmaxoc"; // NPM PACKAGE
+import 'modalmaxoc/dist/style.module.css';
 import { useDispatch } from "react-redux";
 import departmentsData from "../../data/departments.json";
 import statesData from "../../data/states.json"
