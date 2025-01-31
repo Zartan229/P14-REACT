@@ -2,7 +2,7 @@
 
 Téléchargez le repository de l'application HRNET !
 
-bash
+```bash
 npm install
 ```
 Ensuite lancez l'appilcation avec
