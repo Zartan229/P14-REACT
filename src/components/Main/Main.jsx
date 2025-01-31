@@ -6,6 +6,7 @@ import Input from "../Input/Input";
 import { pushEmployee } from "../../Utility/Utility";
 import Modal from "modalmaxoc"; // NPM PACKAGE
 import 'modalmaxoc/dist/style.module.css';
+import classes from './style.module.css'
 import { useDispatch } from "react-redux";
 import departmentsData from "../../data/departments.json";
 import statesData from "../../data/states.json"
@@ -44,14 +45,14 @@ export default function Main() {
   };
 
   return (
-    <section>
+    <section className={classes.sectionCreate}>
       <div className="title">
         <h1>HRnet</h1>
       </div>
-      <div className="container">
-        <a href="employee">View Current Employees</a>
+      <div >
+        <a className={classes.linkBold} href="employee">View Current Employees</a>
         <h2>Create Employee</h2>
-        <form id="create-employee" onSubmit={saveEmployee}>
+        <form className={classes.formFlex} id="create-employee" onSubmit={saveEmployee}>
           <Input
             id="firstName"
             label="First Name"
@@ -64,7 +65,7 @@ export default function Main() {
             value={formData.lastName}
             onChange={handleInputChange}
           />
-
+          <div>
           <label htmlFor="dateOfBirth">Date of Birth</label>
           <DatePicker
             selected={
@@ -80,8 +81,8 @@ export default function Main() {
             }
             dateFormat="yyyy-MM-dd"
             placeholderText="Select a date"
-          />
-
+          /></div>
+          <div>
           <label htmlFor="startDate">Start Date</label>
           <DatePicker
             selected={formData.startDate ? new Date(formData.startDate) : null}
@@ -96,8 +97,8 @@ export default function Main() {
             dateFormat="yyyy-MM-dd"
             placeholderText="Select a date"
           />
-
-          <fieldset className="address">
+          </div>
+          <fieldset className={classes.formFlex}>
             <legend>Address</legend>
             <Input
               id="street"

@@ -1,0 +1,23 @@
+.queryFlex {
+  display: flex;
+  justify-content: space-between;
+}
+.queryFlex > a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.colorHeader {
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.colorHeader div {
+  background-color: aliceblue;
+}
+
+.colorHeader div nav {
+  background-color: aliceblue;
+}
