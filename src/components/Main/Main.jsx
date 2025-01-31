@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Select from "../Select/Select";
 import Input from "../Input/Input";
 import { pushEmployee } from "../../Utility/Utility";
@@ -10,7 +8,7 @@ import classes from './style.module.css'
 import { useDispatch } from "react-redux";
 import departmentsData from "../../data/departments.json";
 import statesData from "../../data/states.json"
-
+import DatePickerInput from "../DatePickerInput/DatePickerInput";
 export default function Main() {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
@@ -66,36 +64,18 @@ export default function Main() {
             onChange={handleInputChange}
           />
           <div>
-          <label htmlFor="dateOfBirth">Date of Birth</label>
-          <DatePicker
-            selected={
-              formData.dateOfBirth ? new Date(formData.dateOfBirth) : null
-            }
-            onChange={(date) =>
-              handleInputChange({
-                target: {
-                  id: "dateOfBirth",
-                  value: date ? date.toISOString().split("T")[0] : "",
-                },
-              })
-            }
-            dateFormat="yyyy-MM-dd"
-            placeholderText="Select a date"
+          <DatePickerInput
+            id="dateOfBirth"
+            label="Date of Birth"
+            value={formData.dateOfBirth}
+            onChange={handleInputChange}
           /></div>
           <div>
-          <label htmlFor="startDate">Start Date</label>
-          <DatePicker
-            selected={formData.startDate ? new Date(formData.startDate) : null}
-            onChange={(date) =>
-              handleInputChange({
-                target: {
-                  id: "startDate",
-                  value: date ? date.toISOString().split("T")[0] : "",
-                },
-              })
-            }
-            dateFormat="yyyy-MM-dd"
-            placeholderText="Select a date"
+          <DatePickerInput
+            id="startDate"
+            label="Start Date"
+            value={formData.startDate}
+            onChange={handleInputChange}
           />
           </div>
           <fieldset className={classes.formFlex}>
