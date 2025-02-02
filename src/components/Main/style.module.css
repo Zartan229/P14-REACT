@@ -12,26 +12,30 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  align-items: center;
 }
 
 form > div {
   margin: 5px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 fieldset > div {
   margin: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 form > button {
-  background-color: cornsilk;
+  border: gray 1px solid;
 }
 
 .linkBold {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }

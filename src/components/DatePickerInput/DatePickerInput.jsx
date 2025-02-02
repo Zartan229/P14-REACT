@@ -3,8 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function DatePickerInput ({ id, label, value, onChange }) {
-  return (
-    <div>
+  return (<>
       <label htmlFor={id}>{label}</label>
       <DatePicker
         selected={value ? new Date(value) : null}
@@ -18,7 +17,6 @@ export default function DatePickerInput ({ id, label, value, onChange }) {
         }
         dateFormat="yyyy-MM-dd"
         placeholderText="Select a date"
-      />
-    </div>
+      /></>
   );
 };
